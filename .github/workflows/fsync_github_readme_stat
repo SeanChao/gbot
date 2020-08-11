@@ -1,0 +1,19 @@
+name: \[Sync Fork\] github-readme-stat
+
+on:
+  schedule:
+    - cron: '0 0 * * 6' # Runs at 00:00 UTC every Saturday
+
+jobs:
+  update_readme_stat_fork:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: TobKed/github-forks-sync-action@master
+        with:
+          github_token: ${{ secrets.PAT }}
+          upstream_repository: anuraghazra/github-readme-stats
+          target_repository: SeanChao/github-readme-stats
+          upstream_branch: master
+          target_branch: master
+          force: true
+          tags: true
