@@ -1,4 +1,4 @@
-name: \[Sync Fork\] github-readme-stat
+name: '[Sync Fork] github-readme-stat'
 
 on:
   schedule:
